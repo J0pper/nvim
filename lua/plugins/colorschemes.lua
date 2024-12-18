@@ -1,10 +1,16 @@
 return {
     'catppuccin/nvim',
-    lazy = false,
+    name = 'cappuccin',
     main = 'catppuccin',
     priority = 1000,
 
-    config = function()
-        vim.cmd([[colorscheme catppuccin]])
+    opts = {
+        flavour = 'mocha',
+    },   
+
+    config = function(_, opts)
+        require('catppuccin').setup(opts)
+
+        vim.cmd.colorscheme 'catppuccin' 
     end,
 }
