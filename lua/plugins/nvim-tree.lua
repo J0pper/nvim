@@ -24,5 +24,7 @@ return {
 
     config = function(_, opts)
         require('nvim-tree').setup(opts)
+
+        vim.keymap.set('n', '<C-n>', ':NvimTreeOpen<CR>', {})
     end,
 }

@@ -3,12 +3,6 @@ return {
     main = 'nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-        ensure_installed = {
-            'c',
-            'lua',
-            'python',
-        },
-
         auto_install = true,
 
         highlight = {
