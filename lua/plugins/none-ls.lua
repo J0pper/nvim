@@ -7,7 +7,7 @@ return {
 				null_ls.builtins.formatting.stylua,
 
 				null_ls.builtins.formatting.phpcsfixer,
-				null_ls.builtins.diagnostics.phpcs,
+				-- null_ls.builtins.diagnostics.phpcs,
 			},
 		})
 

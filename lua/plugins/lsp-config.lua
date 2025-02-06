@@ -20,10 +20,11 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"stylua",
-					"intelephense",
+					-- "intelephense",
+					"phpactor",
 					"phpcs",
 					"php-cs-fixer",
-					"clang-format",
+					-- "clang-format",
 				},
 			})
 		end,
@@ -34,7 +35,16 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
+
 			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+
+			-- lspconfig.intelephense.setup({
+			-- 	capabilities = capabilities,
+			-- })
+
+			lspconfig.phpactor.setup({
 				capabilities = capabilities,
 			})
 
