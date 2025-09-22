@@ -8,10 +8,14 @@ return {
 		end,
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
-		opts = {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {
 			auto_install = true,
-		},
+        },
+        dependencies = {
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
+        },
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -20,34 +24,24 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"stylua",
-					-- "intelephense",
+                    "clangd",
+					"intelephense",
 					"phpactor",
 					"phpcs",
-					"php-cs-fixer",
-					-- "clang-format",
+                    "php-cs-fixer",
+					"clang-format",
 				},
+
+                auto_update = true,
+                run_onstart = true,
+                start_delay = 3000,
+
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-			local lspconfig = require("lspconfig")
-
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-
-			-- lspconfig.intelephense.setup({
-			-- 	capabilities = capabilities,
-			-- })
-
-			lspconfig.phpactor.setup({
-				capabilities = capabilities,
-			})
-
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
