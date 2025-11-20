@@ -3,6 +3,11 @@ return {
     version = false,
 
     config = function()
+        require('mini.align').setup()
+        require('mini.pairs').setup()
+
+        require('mini.animate').setup()
+        require('mini.icons').setup()
         require('mini.indentscope').setup()
     end,
 }
