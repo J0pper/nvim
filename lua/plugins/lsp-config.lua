@@ -50,30 +50,18 @@ return {
                 root_markers = { '.git' },
             })
 
-            -- Import clangd config
-            local clangd_config = require('plugins.lsp.clangd')
+            -- Import LSP configs
+            local clangd_config = require('plugins.lsp.clangd')   -- clangd
+            local pyright_config = require('plugins.lsp.pyright') -- pyright
 
-            -- Register clangd LSP
-            vim.lsp.config('clangd', clangd_config)
+            -- Register LSP
+            vim.lsp.config('clangd', clangd_config)               -- clangd
+            vim.lsp.config('pyright', pyright_config)             -- pyright
 
             -- Enable clangd
-            vim.lsp.enable('clangd')
+            vim.lsp.enable('clangd')                              -- clangd
+            vim.lsp.enable('pyright')                             -- pyright
 
-
-            -- vim.lsp.config('clangd', {
-            --     cmd = { 'clangd' },
-            --     filetypes = { 'c', 'cpp' },
-            --     root_markers = {
-            --         '.clangd',
-            --         '.clang-tidy',
-            --         '.clang-format',
-            --         'compile_commands.json',
-            --         'compile_flags.txt',
-            --         'configure.ac', -- AutoTools
-            --     },
-            -- })
-            --
-            -- vim.lsp.enable('clangd')
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
