@@ -9,5 +9,8 @@ return {
         require('mini.animate').setup()
         require('mini.icons').setup()
         require('mini.indentscope').setup()
+
+
+        require('mini.starter').setup()
     end,
 }
