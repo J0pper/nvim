@@ -51,16 +51,25 @@ return {
             })
 
             -- Import LSP configs
-            local clangd_config = require('plugins.lsp.clangd')   -- clangd
-            local pyright_config = require('plugins.lsp.pyright') -- pyright
+            local clangd_config        = require('plugins.lsp.clangd')        -- clangd
+            local pyright_config       = require('plugins.lsp.pyright')       -- pyright
+            local vtsls_config         = require('plugins.lsp.vtsls')         -- vtsls
+            local html_lsp_config      = require('plugins.lsp.html-lsp')      -- html
+            local rust_analyzer_config = require('plugins.lsp.rust-analyzer') -- rust-analyzer
 
             -- Register LSP
-            vim.lsp.config('clangd', clangd_config)               -- clangd
-            vim.lsp.config('pyright', pyright_config)             -- pyright
+            vim.lsp.config('clangd',        clangd_config)        -- clangd
+            vim.lsp.config('pyright',       pyright_config)       -- pyright
+            vim.lsp.config('vtsls',         vtsls_config)         -- vtsls
+            vim.lsp.config('html-lsp',      html_lsp_config)      -- html
+            vim.lsp.config('rust-analyzer', rust_analyzer_config) -- rust-analyzer
 
-            -- Enable clangd
-            vim.lsp.enable('clangd')                              -- clangd
+            -- Enable LSP
+            vim.lsp.enable('clangd')                              -- clangdja
             vim.lsp.enable('pyright')                             -- pyright
+            vim.lsp.enable('vtsls')                               -- vtsls
+            vim.lsp.enable('html-lsp')                            -- html
+            vim.lsp.enable('rust-analyzer')                       -- rust-analyzer
 
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

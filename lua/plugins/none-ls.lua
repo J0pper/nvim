@@ -9,6 +9,8 @@ return {
 				null_ls.builtins.formatting.phpcsfixer,
 
 				null_ls.builtins.formatting.clangdformat,
+
+				-- null_ls.builtins.formatting.ast_grep,
 				-- null_ls.builtins.diagnostics.phpcs,
 			},
 		})
