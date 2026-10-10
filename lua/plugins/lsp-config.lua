@@ -56,6 +56,7 @@ return {
             local vtsls_config         = require('plugins.lsp.vtsls')         -- vtsls
             local html_lsp_config      = require('plugins.lsp.html-lsp')      -- html
             local rust_analyzer_config = require('plugins.lsp.rust-analyzer') -- rust-analyzer
+            local jdtls_config         = require('plugins.lsp.jdtls')         -- jdtls 
 
             -- Register LSP
             vim.lsp.config('clangd',        clangd_config)        -- clangd
@@ -63,6 +64,7 @@ return {
             vim.lsp.config('vtsls',         vtsls_config)         -- vtsls
             vim.lsp.config('html-lsp',      html_lsp_config)      -- html
             vim.lsp.config('rust-analyzer', rust_analyzer_config) -- rust-analyzer
+            vim.lsp.config('jdtls',         jdtls_config)         -- jdtls
 
             -- Enable LSP
             vim.lsp.enable('clangd')                              -- clangdja
@@ -70,6 +72,7 @@ return {
             vim.lsp.enable('vtsls')                               -- vtsls
             vim.lsp.enable('html-lsp')                            -- html
             vim.lsp.enable('rust-analyzer')                       -- rust-analyzer
+            vim.lsp.enable('jdtls')                               -- jdtls 
 
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
